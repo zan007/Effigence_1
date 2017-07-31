@@ -1,0 +1,12 @@
+.DS_Store
+bower_components
+node_modules
+npm-debug.log
+foundation-icons
+js
+.bowerrc
+bower.json
+CHANGELOG.md
+gulpfile.js
+package.json
+
