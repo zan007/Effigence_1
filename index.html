@@ -14,11 +14,13 @@
   <body>
     
    <div class="container login_background">     
+     <!-- Klasy powinny być pisane kebab-casem -->
      <div class="row">
 <!-- 1st column -->
        <div class="small-4 columns">
 <!-- Logo -->
-         <div class="logo">         
+         <div class="logo">
+           <!-- ten div nic nie wnosi do struktury, nie ma do niego przypisanych żadnych styli. Osobiście usunąłbym div spod spodu, a style z klasy round przeniosl do klasy logo. Wtedy czytając style od razu wiadomo czego dotyczą -->
             <div class="round">
                  <img src="img/ef_log.png" alt="logo efi3">   
                    <!-- <p class="text-center shape">efi3<p>      -->
@@ -28,6 +30,7 @@
 <!-- 2nd column -->
        <div class="small-4 columns">
          <div class="main_login text-center">
+           <!-- Siatka(Grid) dostarczony przez foundation, którego używasz powinien definiować szkielet widoku i zachowanie w momencie zmniejszania/zwiększania okna, a style które dodajesz do własnych klas nie powinny w tą siatkę ingerować. W tym przypadku ustawiasz szerokość kolumny klasą small-4 a następnie w swojej klasie main_login ustawiasz statyczna szerokość w pikselach. Nie powinno się tego robić. Jeżeli kolumna jest za wąska to użyj np. small-6 -->
 <!-- Welcom part -->
            <div class="welcom_part">
              <p class="text-center">
@@ -45,6 +48,7 @@
  <!-- Customer ID                      -->
              <div class="customer-number">               
                <label>
+                 <!-- znacznik label służy do tworzenia podpisu do pola tekstowego, a nie jako kontener. Odsyłam do dokumentacji https://www.w3schools.com/tags/tag_label.asp  -->
                  <input type="number" name="customer-id" value="" placeholder="123456789">
                     <div class="remove-circle">
                       <div class="remove-x">                    
@@ -55,7 +59,9 @@
  <!-- Password             -->
              <div class="customer-password">
                <label>
+                 <!-- Ta sama sytuacja co wyżej -->
                  <input type="text" id = "password_input" name="password" value="">
+                 <!-- id jak i klasy powinny być pisane kebab-casem -->
                     <span id = "password_span" class="keyboard"></span>  
                </label>
              </div>
@@ -63,6 +69,8 @@
              <div class="buttons">                        
                 <button><a href='#'>SELECT OTHER</a></button> 
                 <button><a href='#'>GO</a></button>
+               <!-- Elementy typu <button> <a> będą wyglądały spójnie w całej aplikacji, dlatego nie uzależniał bym ich wyglądu od klasy "buttons"-->
+               <!-- Wydaje mi się, że lepiej będzie tutaj zastosować tylko <button> bez <a> w środku. Button to button, a link to link, nie ma potrzeby ich mieszania -->
              </div>
             </form>
          </div>
@@ -90,7 +98,9 @@
     <script>
       //$(document).foundation();
     </script>
-
+    
+    <!-- Powyższych plików .js nie ma w projekcie. Proszę dodaj            -->
+    
     <!-- Compressed JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.1/js/foundation.min.js"     integrity="sha256-Nd2xznOkrE9HkrAMi4xWy/hXkQraXioBg9iYsBrcFrs="     crossorigin="anonymous"></script>
 
